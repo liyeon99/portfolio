@@ -1,0 +1,135 @@
+@import './reset.css';
+@import './common.css';
+
+#header .group-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px var(--common-padding);
+  z-index: 20;
+  text-shadow: #FFF 0px 0px 5px,
+    #ecfb5c 0px 0px 20px,
+    #ecfb5c 0px 0px 30px,
+    #ecfb5c 0px 0px 40px,
+    #ecfb5c 0px 0px 75px;
+}
+
+#header h1 {
+  font-family: var(--font);
+}
+
+
+#header .nav {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30px;
+  text-transform: uppercase;
+  z-index: 20;
+}
+#header .nav .nav-list {
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  background-color: rgba(29, 29, 29, 0.4);
+  border: 1px solid rgba(230, 239, 239, .2);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 14px 20px;
+  width: fit-content;
+}
+
+#header .nav .nav-item {
+  transition: color .3s;
+}
+
+#header .nav .nav-item.active,
+#header .nav .nav-item:hover {
+  color: var(--color-primary);
+}
+
+#footer {
+  padding: 200px var(--common-padding);
+  background: #252525;
+}
+
+#footer .group-footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 3vw;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+#footer p {
+  font-size: 18px;
+}
+
+#footer .info-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  margin-top: 40px;
+}
+
+#footer .info-area .copyrights {
+  font-size: 12px;
+  color: var(--color-gray);
+  text-transform: uppercase;
+}
+
+#footer .info-area .email-wrap {
+  line-height: 1.1;
+}
+
+#footer .info-area .email-wrap strong {
+  font-size: clamp(14px, 3vw, 16px);
+  animation: flicker 3s linear infinite;
+}
+
+#footer .info-area .email-wrap address {
+  font-size: clamp(16px, 4vw, 26px);
+  text-transform: uppercase;
+}
+
+#footer .info-area .email-wrap .email {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+@keyframes flicker {
+  0% {opacity:0;}
+  10% {opacity:.5;}
+  13% {opacity:0;}
+  20% {opacity:.5;}
+  25% {opacity:1;}
+}
+
+@media (min-width: 700px) {
+  #header .nav {
+    bottom: 50px;
+  }
+  #header .nav.top {
+    bottom: 50px;
+  }
+  #footer .group-footer {
+    width: 80%;
+  }
+  #footer p {
+    font-size: 30px;
+  }
+  #footer .info-area {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}

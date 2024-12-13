@@ -1,0 +1,323 @@
+/*main*/
+
+.sc-intro .group-title {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: var(--color-main);
+  overflow: hidden;
+}
+
+.sc-intro .group-title .circle,
+.sc-intro .group-title .circle-mobile {
+  position: absolute;
+  will-change: transform;
+  width: 200px;
+  height: 200px;
+  z-index: 2;
+  border-radius: 50%;
+  background: var(--color-secondary);
+  filter: blur(100px);
+}
+
+.sc-intro .group-title .circle {
+  display: none;
+  opacity: 0;
+  transition: opacity 2.5s ease;
+}
+
+.sc-intro .group-title .circle.opacity {
+  opacity: 1;
+}
+
+.sc-intro .group-title .bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.sc-intro .group-title .bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sc-intro .group-title .headline {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--color-primary);
+  font-size: clamp(20px, 10vw, 102px);
+  font-family: var(--font);
+  text-align: left;
+  line-height: 1;
+  position: relative;
+  z-index: 4;
+}
+
+.sc-intro .group-title .headline .name {
+  font-size: clamp(16px, 8vw, 76px);
+}
+
+.sc-intro .group-desc .desc {
+  text-transform: uppercase;
+  text-indent: 50px;
+  width: 300px;
+  color: #fffcff;
+  font-size: 12px;
+}
+
+.sc-project .group-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-size: clamp(20px, 10.4167vw, 250px);
+  line-height: 1.4;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: var(--font);
+  z-index: -1;
+}
+
+.sc-project .group-title .headline {
+  overflow: hidden;
+}
+
+.sc-project .group-project {
+  height: 700vh;
+  margin-top: -100vh;
+}
+
+.sc-project .group-project .project-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  --color-project: #001A6E;
+  background-color: var(--color-project);
+  padding: clamp(10px, 10vw, 20px);
+}
+
+.sc-project .group-project .project-item:nth-child(1) {
+  z-index: 1;
+}
+
+.sc-project .group-project .project-item:nth-child(2) {
+  z-index: 2;
+  --color-project: #074799;
+
+}
+
+.sc-project .group-project .project-item:nth-child(3) {
+  z-index: 3;
+  --color-project: #009990;
+}
+
+.sc-project .group-project .project-item:nth-child(4) {
+  z-index: 4;
+  --color-project: #72BF78;
+}
+
+.sc-project .group-project .project-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  gap: 20px;
+}
+
+.sc-project .group-project .project-area .title {
+  font-family: var(--font);
+  color: var(--color-white);
+  font-size: clamp(18px, 5vw, 80px);
+  text-transform: uppercase;
+}
+
+.sc-project .group-project .project-area .links-box {
+  display: flex;
+  gap: 10px;
+  text-transform: uppercase;
+}
+
+
+.sc-project .group-project .project-area .thumb {
+  width: clamp(300px, 70vw, 1200px);
+  height: clamp(300px, 70vw, 620px);
+}
+
+.sc-project .group-project .project-area .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sc-project .links-box a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  font-size: 12px;
+  padding: 5px 10px;
+  border: 1px solid #fff;
+  transition: 0.3s ease-in-out;
+}
+
+.sc-project .links-box a:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-main);
+}
+
+.sc-project .tag-box {
+  display: flex;
+  gap: 0 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  margin: 10px 0 20px;
+  font-size: 12px;
+}
+
+.sc-project .tag-box span::before {
+  content: '#';
+}
+
+.sc-project .group-side {
+  position: relative;
+  max-width: 1600px;
+  margin: 100px auto;
+}
+
+.sc-project .group-side .links-box {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.sc-project .group-side .tag-box {
+  justify-content: flex-start;
+  margin-left: 10px;
+}
+
+.sc-project .side-item {
+  padding: 20px;
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, .1);
+}
+
+.sc-project .side-item:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+.sc-project .side-item .title {
+  font-size: 24px;
+  text-transform: uppercase;
+  font-family: var(--font);
+}
+
+.sc-project .side-item .thumb {
+  width: 100%;
+  height: 230px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.sc-project .side-item .thumb::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.sc-project .side-item .thumb img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 700px) {
+
+  .sc-intro .group-title .circle-mobile {
+    display: none;
+  }
+
+  .sc-intro .group-title .circle {
+    display: block;
+  }
+
+  .sc-project .group-title {
+    top: 0;
+  }
+
+  .sc-project .group-project .project-area {
+    gap: 10px;
+    min-height: 1080px;
+  }
+
+  .sc-project .links-box a {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .sc-project .links-box a:hover::after {
+    filter: brightness(0) saturate(100%) invert(9%) sepia(23%) saturate(1188%) hue-rotate(120deg) brightness(97%) contrast(104%);
+  }
+
+  .sc-project .link-go::after {
+    content: '';
+    width: 20px;
+    height: 100%;
+    background-image: url(../images/arrow.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .sc-project .tag-box {
+    font-size: 14px;
+  }
+
+  .sc-project .group-side {
+    width: 80%;
+  }
+
+  .sc-project .group-side .side-area {
+    flex: 1;
+  }
+
+  .sc-project .side-item {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .sc-project .side-item .thumb img {
+    transition: scale .3s ease-in-out;
+  }
+
+  .sc-project .side-item:hover .thumb img {
+    scale: 1.1;
+  }
+
+  .sc-project .side-item .thumb {
+    width: 30vw;
+    max-width: 600px;
+  }
+}
