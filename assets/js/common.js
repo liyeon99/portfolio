@@ -75,22 +75,22 @@ links.forEach((link) => {
 
 
 // 인트로 와플 커서
-let mouseCircle = document.querySelector(".circle");
-const groupTitle = document.querySelector(".sc-intro .group-title");
+// let mouseCircle = document.querySelector(".circle");
+// const groupTitle = document.querySelector(".sc-intro .group-title");
 
-groupTitle.addEventListener("mousemove", (e) => {
-  const groupTitleRect = groupTitle.getBoundingClientRect(); // group-title 영역의 크기와 위치
-  const x = e.clientX - groupTitleRect.left; // group-title 내에서의 x 좌표
-  const y = e.clientY - groupTitleRect.top; // group-title 내에서의 y 좌표
+// groupTitle.addEventListener("mousemove", (e) => {
+//   const groupTitleRect = groupTitle.getBoundingClientRect(); // group-title 영역의 크기와 위치
+//   const x = e.clientX - groupTitleRect.left; // group-title 내에서의 x 좌표
+//   const y = e.clientY - groupTitleRect.top; // group-title 내에서의 y 좌표
 
-  mouseCircle.style.left = `${x - mouseCircle.offsetWidth / 2}px`; // 마우스 커서를 중심으로 맞추기
-  mouseCircle.style.top = `${y - mouseCircle.offsetHeight / 2}px`; // 마우스 커서를 중심으로 맞추기
-  mouseCircle.classList.add("opacity");
-});
+//   mouseCircle.style.left = `${x - mouseCircle.offsetWidth / 2}px`; // 마우스 커서를 중심으로 맞추기
+//   mouseCircle.style.top = `${y - mouseCircle.offsetHeight / 2}px`; // 마우스 커서를 중심으로 맞추기
+//   mouseCircle.classList.add("opacity");
+// });
 
-groupTitle.addEventListener("mouseleave", () => {
-  mouseCircle.classList.remove("opacity");
-});
+// groupTitle.addEventListener("mouseleave", () => {
+//   mouseCircle.classList.remove("opacity");
+// });
 
 
 
