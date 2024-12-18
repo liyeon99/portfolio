@@ -1,5 +1,38 @@
 /*main*/
-
+.sc-intro{
+  height: 100vh;
+  position: relative;
+}
+.sc-intro .headline{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10vw;
+  z-index: 10;
+}
+.sc-intro .desc{
+  max-width: 500px;
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  font-size: 16px;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+.sc-intro .marquee {
+  display: flex;
+  gap: 5px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.sc-intro .marquee img{
+  width: 150px;
+}
+/* 
 .sc-intro .group-title {
   height: 100vh;
   display: flex;
@@ -10,7 +43,6 @@
   background-color: var(--color-main);
   overflow: hidden;
 }
-
 .sc-intro .group-title .circle,
 .sc-intro .group-title .circle-mobile {
   position: absolute;
@@ -63,7 +95,7 @@
 
 .sc-intro .group-title .headline .name {
   font-size: clamp(16px, 8vw, 76px);
-}
+} */
 
 .sc-intro .group-desc .desc {
   text-transform: uppercase;

@@ -9,11 +9,11 @@
   justify-content: space-between;
   padding: 20px var(--common-padding);
   z-index: 20;
-  text-shadow: #FFF 0px 0px 5px,
+  /* text-shadow: #FFF 0px 0px 5px,
     #ecfb5c 0px 0px 20px,
     #ecfb5c 0px 0px 30px,
     #ecfb5c 0px 0px 40px,
-    #ecfb5c 0px 0px 75px;
+    #ecfb5c 0px 0px 75px; */
 }
 
 #header h1 {

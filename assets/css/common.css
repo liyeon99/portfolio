@@ -10,9 +10,10 @@ html{
   --font2: "Pretendard Variable", Pretendard, sans-serif;
   --color-white: #fff;
   --color-gray: #999;
-  --color-main: #001614;
-  --color-primary: #ecfb5c;
-  --color-secondary : #9EF501;
+  --color-main: #000;
+  --color-primary: #fff;
+  /* --color-secondary : #9EF501; */
+  /* --color-secondary : pink; */
   --common-padding: clamp(20px, 2vw, 40px);
 }
 
