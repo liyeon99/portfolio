@@ -24,7 +24,7 @@ input {
 }
 body{
   min-width: 320px;
-  font-family: "Pretendard Variable", Pretendard, sans-serif;
+  font-family: "aaa","Pretendard Variable", Pretendard, sans-serif;
   font-weight: 500;
   color: var(--color-white);
   background: var(--color-main);

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+  perspective: 500px; /* 3D 효과를 위한 원근감 추가 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* 화면 중앙 정렬 */
+  background-color: #f0f0f0;
+}
+
+.square {
+  width: 100px; /* 사각형 너비 */
+  height: 100px; /* 사각형 높이 */
+  background-color: #3498db; /* 사각형 색상 */
+  transform-style: preserve-3d; /* 3D 효과 유지 */
+  animation: rotate 3s infinite linear; /* 회전 애니메이션 */
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="square"></div>
+  </div>
+</body>
+</html>

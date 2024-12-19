@@ -17,6 +17,10 @@
   <!-- css -->
   <link rel="stylesheet" href="./assets/css/layout.css">
   <link rel="stylesheet" href="./assets/css/main.css">
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  
   <!-- gsap -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
@@ -50,44 +54,26 @@
     <main id="main">
       <section id="home" class="sc-intro">
         <h2 class="headline">
-          340 <span id="nuit">HOUR</span>
+          <div id="num">
+            0
+          </div>
+          <span id="nuit">HOUR</span>
         </h2>
 
-        <ul class="marquee">
-          <li>
-            <img src="./assets/images/project/lightship.jpg" alt="">
-          </li>
-          <li>
-            <img src="./assets/images/project/lightship.jpg" alt="">
-          </li>
-          <li>
-            <img src="./assets/images/project/lightship.jpg" alt="">
-          </li>
-          <li>
-            <img src="./assets/images/project/lightship.jpg" alt="">
-          </li>
-          <li>
-            <img src="./assets/images/project/lightship.jpg" alt="">
-          </li>
-          <li>
-            <img src="./assets/images/project/lightship.jpg" alt="">
-          </li>
-          <li>
-            <img src="./assets/images/project/lightship.jpg" alt="">
-          </li>
-          <li>
-            <img src="./assets/images/project/lightship.jpg" alt="">
-          </li>
-          <li>
-            <img src="./assets/images/project/lightship.jpg" alt="">
-          </li>
-          <li>
-            <img src="./assets/images/project/lightship.jpg" alt="">
-          </li>
-          <li>
-            <img src="./assets/images/project/lightship.jpg" alt="">
-          </li>
-        </ul>
+        <div class="marquee swiper-container">
+          <ul class="marquee-list swiper-wrapper">
+            <li class="swiper-slide"><img src="./assets/images/marquee/daniil-silantev-MWGaMlETWgQ-unsplash.jpg" alt=""></li>
+            <li class="swiper-slide"><img src="./assets/images/marquee/david-becker-tKOf1GNI9LY-unsplash.jpg" alt=""></li>
+            <li class="swiper-slide"><img src="./assets/images/marquee/lorenzo-marucchi-PoQn2M2RMTo-unsplash.jpg" alt=""></li>
+            <li class="swiper-slide"><img src="./assets/images/marquee/maksym-mazur-kNO-lvgNan8-unsplash.jpg" alt=""></li>
+            <li class="swiper-slide"><img src="./assets/images/marquee/mike-hindle-ppkTc8mp8ZE-unsplash.jpg" alt=""></li>
+            <li class="swiper-slide"><img src="./assets/images/marquee/nasa-hubble-space-telescope-BW-rH_JGVrU-unsplash.jpg" alt=""></li>
+            <li class="swiper-slide"><img src="./assets/images/marquee/rachel-harvey-kRuF-7bYwPI-unsplash.jpg" alt=""></li>
+            <li class="swiper-slide"><img src="./assets/images/marquee/sean-pierce-kM04k3GbQ98-unsplash.jpg" alt=""></li>
+            <li class="swiper-slide"><img src="./assets/images/marquee/silas-schneider-JxDpsez__Cc-unsplash.jpg" alt=""></li>
+            <li class="swiper-slide"><img src="./assets/images/marquee/sufyan-mUf9S5Pwh-E-unsplash.jpg" alt=""></li>
+          </ul>
+        </div>
         
         <!-- <video src="https://player.vimeo.com/video/1019495572?autoplay=1&loop=1&autopause=0&background=1&muted=1"></video> -->
         <!-- <div class="group-title">
@@ -102,104 +88,95 @@
           </div>
         </div> -->
         <p class="desc">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam iure odit temporibus laborum maiores impedit eveniet aperiam ipsam quis quasi, voluptatem earum ab sunt nisi ratione repellat incidunt. Sapiente, laboriosam!
+          Over 340 hours, it’s been a journey of turning ideas into reality and refining every detail to deliver a result that exceeds expectations.
         </p>
       </section>
       <section id="project" class="sc-project">
         <div class="group-title">
-          <h2 class="headline">
-            project
-          </h2>
+          <h2 class="blind">project</h2>
         </div>
         <div class="group-project">
-          <div class="sticky">
-            <ul class="project-list">
-              <li class="project-item">
-                <div class="project-area">
-                  <h3 class="title">vendredi-society</h3>
-                  <div class="links-box">
-                    <a href="https://liyeon-society.netlify.app/" class="link-go" target="_blank">GO SITE</a>
-                    <a href="https://velog.io/@li99/vendredi-society" target="_blank">CODE REVIEW</a>
-                  </div>
-                  <div class="tag-box">
-                    <span>Responsive</span>
-                    <span>jquery</span>
-                    <span>SCSS</span>
-                    <span>lenis</span>
-                    <span>gsap</span>
-                    <span>scrolltrigger</span>
-                    <span>canvas</span>
-                  </div>
-                  <div class="thumb">
-                    <img src="./assets/images/project/vendredi.png" alt>
-                  </div>
+          <ul class="project-list">
+            <li class="project-item">
+              <div class="project-area">
+                <h3 class="title">vendredi-society</h3>
+                <div class="links-box">
+                  <a href="https://liyeon-society.netlify.app/" class="link-go" target="_blank">GO SITE</a>
+                  <a href="https://velog.io/@li99/vendredi-society" target="_blank">CODE REVIEW</a>
                 </div>
-              </li>
-              <li class="project-item">
-                <div class="project-area">
-                  <h3 class="title">lightship</h3>
-                  <div class="links-box">
-                    <a href="https://liyeon-lightship.netlify.app/" class="link-go" target="_blank">GO SITE</a>
-                    <a href="https://velog.io/@li99/lightship" target="_blank">CODE REVIEW</a>
-                  </div>
-                  <div class="tag-box">
-                    <span>Responsive</span>
-                    <span>jquery</span>
-                    <span>SCSS</span>
-                    <span>swiper</span>
-                    <span>lottie</span>
-                    <span>gsap</span>
-                    <span>scrolltrigger</span>
-                  </div>
-                  <div class="thumb">
-                    <img src="./assets/images/project/lightship.jpg" alt>
-                  </div>
+                <div class="tag-box">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vero vitae voluptatibus alias quibusdam deserunt, cupiditate error ipsa quasi quia fugit. Esse velit totam, eaque consectetur sint pariatur ab nobis.
                 </div>
-              </li>
-              <li class="project-item">
-                <div class="project-area">
-                  <h3 class="title">IPHONE PRO16</h3>
-                  <div class="links-box">
-                    <a href="https://liyeon-iphone.netlify.app/" class="link-go" target="_blank">GO SITE</a>
-                    <a href="https://velog.io/@li99/iphone-16-pro/" target="_blank">CODE REVIEW</a>
-                  </div>
-                  <div class="tag-box">
-                    <span>Responsive</span>
-                    <span>jquery</span>
-                    <span>SCSS</span>
-                    <span>swiper</span>
-                    <span>gsap</span>
-                    <span>scrolltrigger</span>
-                  </div>
-                  <div class="thumb">
-                    <img src="./assets/images/project/iphone.jpg" alt>
-                  </div>
+                <div class="thumb">
+                  <!-- <img src="./assets/images/project/vendredi.png" alt> -->
+                  <video loop autoplay muted src="https://player.vimeo.com/progressive_redirect/playback/908723147/rendition/1080p/file.mp4?loc=external&log_user=0&signature=b8f1577ecf209cd5fc8c82241917e27e09db042e4d479718319f4113c341d596"></video>
                 </div>
-              </li>
-              <li class="project-item">
-                <div class="project-area">
-                  <h3 class="title">w concept</h3>
-                  <div class="links-box">
-                    <a href="https://liyeon-wconcept.netlify.app" class="link-go" target="_blank">GO SITE</a>
-                    <a href="https://fldus612.cafe24.com/" class="link-go" target="_blank">GO CAFE24</a>
-                    <a href="https://velog.io/@li99/w컨셉" target="_blank">CODE REVIEW</a>
-                  </div>
-                  <div class="tag-box">
-                    <span>pc</span>
-                    <span>jquery</span>
-                    <span>SCSS</span>
-                    <span>CAFE24</span>
-                    <span>swiper</span>
-                    <span>json</span>
-                  </div>
-                  <div class="thumb">
-                    <img src="./assets/images/project/wconcept.jpg" alt>
-                  </div>
+              </div>
+            </li>
+            <li class="project-item">
+              <div class="project-area">
+                <h3 class="title">lightship</h3>
+                <div class="links-box">
+                  <a href="https://liyeon-lightship.netlify.app/" class="link-go" target="_blank">GO SITE</a>
+                  <a href="https://velog.io/@li99/lightship" target="_blank">CODE REVIEW</a>
                 </div>
-              </li>
-            </ul>
-          </div>
-        </div>
+                <div class="tag-box">
+                  <span>Responsive</span>
+                  <span>jquery</span>
+                  <span>SCSS</span>
+                  <span>swiper</span>
+                  <span>lottie</span>
+                  <span>gsap</span>
+                  <span>scrolltrigger</span>
+                </div>
+                <div class="thumb">
+                  <img src="./assets/images/project/lightship.jpg" alt>
+                </div>
+              </div>
+            </li>
+            <li class="project-item">
+              <div class="project-area">
+                <h3 class="title">IPHONE PRO16</h3>
+                <div class="links-box">
+                  <a href="https://liyeon-iphone.netlify.app/" class="link-go" target="_blank">GO SITE</a>
+                  <a href="https://velog.io/@li99/iphone-16-pro/" target="_blank">CODE REVIEW</a>
+                </div>
+                <div class="tag-box">
+                  <span>Responsive</span>
+                  <span>jquery</span>
+                  <span>SCSS</span>
+                  <span>swiper</span>
+                  <span>gsap</span>
+                  <span>scrolltrigger</span>
+                </div>
+                <div class="thumb">
+                  <img src="./assets/images/project/iphone.jpg" alt>
+                </div>
+              </div>
+            </li>
+            <li class="project-item">
+              <div class="project-area">
+                <h3 class="title">w concept</h3>
+                <div class="links-box">
+                  <a href="https://liyeon-wconcept.netlify.app" class="link-go" target="_blank">GO SITE</a>
+                  <a href="https://fldus612.cafe24.com/" class="link-go" target="_blank">GO CAFE24</a>
+                  <a href="https://velog.io/@li99/w컨셉" target="_blank">CODE REVIEW</a>
+                </div>
+                <div class="tag-box">
+                  <span>pc</span>
+                  <span>jquery</span>
+                  <span>SCSS</span>
+                  <span>CAFE24</span>
+                  <span>swiper</span>
+                  <span>json</span>
+                </div>
+                <div class="thumb">
+                  <img src="./assets/images/project/wconcept.jpg" alt>
+                </div>
+              </div>
+            </li>
+          </ul>
+      </div>
         <div class="group-side">
           <ul class="side-list">
             <li class="side-item">
