@@ -4,14 +4,14 @@ gsap.defaults({
 });
 
 
-const swiper = new Swiper('.swiper-container', {
-  loop: true,
-  centeredSlides: true,
-  slidesPerView: 1.5,
-  slideToClickedSlide: true,
-  effect: 'panorama',
-  autoplay:true,
-});
+  const swiper = new Swiper('.swiper-container', {
+    loop: true,
+    centeredSlides: true,
+    slidesPerView: 1.5,
+    slideToClickedSlide: true,
+    effect: 'panorama',
+    autoplay:true,
+  });
 
 
 const translations = [
