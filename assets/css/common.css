@@ -1,24 +1,9 @@
-@import url('https://fonts.cdnfonts.com/css/druk-wide-trial');
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
-
-
-@font-face {
-  font-family: 'aaa';
-  src: url('../font/65f4cb314e092775d89519c4_HelveticaNeueCyr-Roman.woff2') format('woff2');
-  font-weight: bold;
-}
-@font-face {
-  font-family: 'aaa2';
-  src: url('../font/65f4cb31894491fa119c2252_HelveticaNeueCyr-Medium.woff2') format('woff2');
-  font-weight: bold;
-}
-
 html{
   scroll-behavior: smooth;
 }
 :root {
-  --font: 'Druk Wide Trial', sans-serif;
-  --font2: "aaa","Pretendard Variable", Pretendard, sans-serif;
+  --font: "helve","Pretendard Variable", Pretendard, sans-serif;
+  --font2: 'Druk Wide Trial', sans-serif;
   --color-white: #fff;
   --color-gray: #999;
   --color-main: #000;
@@ -31,7 +16,6 @@ html{
   color: var(--color-main);
   background-color: var(--color-primary);
 }
-
 
 .blind {
   position: absolute;
@@ -49,6 +33,11 @@ html{
   overflow: hidden;
 }
 
+img,video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 @media (min-width: 700px) {
   .cursor {

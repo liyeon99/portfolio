@@ -4,14 +4,20 @@ gsap.defaults({
 });
 
 
-  const swiper = new Swiper('.swiper-container', {
-    loop: true,
-    centeredSlides: true,
-    slidesPerView: 1.5,
-    slideToClickedSlide: true,
-    effect: 'panorama',
-    autoplay:true,
+//딜레이
+setTimeout(() => {
+  gsap.to("#num", {
+    duration: 3, // 애니메이션 지속 시간 (초 단위)
+    innerText: 340, // 목표 숫자
+    snap: { innerText: 1 }, // 숫자가 정수로 바뀌도록 설정
+    onUpdate: function () {
+      document.getElementById("num").innerText = Math.floor(
+        this.targets()[0].innerText
+      );
+    },
   });
+}, 3000);
+
 
 
 const translations = [
@@ -22,45 +28,22 @@ const textContainer = document.getElementById("nuit");
 let index = 0;
 
 function showTranslation() {
-  // 텍스트 페이드아웃 및 위로 이동
-  gsap.to(textContainer, {
-    opacity: 0,
-    y: -20,
-    duration: 0.5,
-    onComplete: () => {
-      // 다음 텍스트로 변경
-      index = (index + 1) % translations.length;
-      textContainer.textContent = translations[index];
+  index = (index + 1) % translations.length;
+  textContainer.textContent = translations[index];
 
-      // 텍스트 초기 위치 설정 및 페이드인
-      gsap.fromTo(
-        textContainer,
-        { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.5 }
-      );
-    },
-  });
+  // 텍스트 초기 위치 설정 및 페이드인
+  gsap.fromTo(
+    textContainer,
+    { y: 100, opacity: 0 },
+    { y: 0, opacity: 1, duration: 0.5 }
+  );
 }
 
-// 매 1초마다 텍스트 전환
-setInterval(showTranslation, 1000);
+// 텍스트 전환
+setInterval(showTranslation, 500);
 
-const targetValue = 340; // 목표 값
-const duration = 2; // 애니메이션 지속 시간
-
-gsap.to("#num", {
-  duration: 3, // 애니메이션 지속 시간 (초 단위)
-  innerText: 340, // 목표 숫자
-  snap: { innerText: 1 }, // 숫자가 정수로 바뀌도록 설정
-  onUpdate: function () {
-    document.getElementById("num").innerText = Math.floor(
-      this.targets()[0].innerText
-    );
-  },
-});
 
 // 사이드 프로젝트
-
 const projectSide = gsap.timeline({
   scrollTrigger: {
     trigger: ".sc-project .group-side",

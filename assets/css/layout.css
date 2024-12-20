@@ -1,3 +1,4 @@
+@import './font.css';
 @import './reset.css';
 @import './common.css';
 
@@ -6,6 +7,7 @@
   top: 0;
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 20px var(--common-padding);
   z-index: 20;
@@ -17,8 +19,8 @@
 }
 
 #header h1 {
-  font-family: var(--font);
-  font-size: 40px;
+  font-family: var(--font2);
+  font-size: 20px;
 }
 
 
@@ -117,6 +119,9 @@
 }
 
 @media (min-width: 700px) {
+  #header h1 {
+    font-size: 40px;
+  }
   #header .nav {
     bottom: 50px;
   }
