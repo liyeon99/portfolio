@@ -49,6 +49,7 @@
 .marquee-list{
   width: 100%;
   display: flex;
+  gap: 5px;
   align-items: center;
   height: 100vh;
   animation: marquee 10s linear infinite;
