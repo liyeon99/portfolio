@@ -4,11 +4,11 @@ html{
 :root {
   --font: "helve","Pretendard Variable", Pretendard, sans-serif;
   --font2: 'Druk Wide Trial', sans-serif;
+  --font3: 'Ballet', serif;
   --color-white: #fff;
   --color-gray: #999;
   --color-main: #000;
   --color-primary: #9EF501;
-  --color-secondary : #9EF501;
   --common-padding: clamp(20px, 2vw, 40px);
 }
 
@@ -28,12 +28,12 @@ html{
   display: flex;
   align-items: center;
   justify-content: center;
-  display: none;
 }
 
 .loading .text-wrap{
   animation: loading 10s linear infinite;
   display: flex;
+  color: var(--color-white);
 }
 .loading p{
   text-transform: uppercase;

@@ -20,31 +20,22 @@ setTimeout(() => {
   });
   loading.style.display = 'none';
 }, 3300);
-// setTimeout(() => {gsap.to(loading,{ yPercent: -100},);}, 3000);
+setTimeout(() => {gsap.to(loading,{ yPercent: -100},);}, 3000);
 
-
-
-const translations = [
-  "Hour", "시간", "時間", "小时", "Hora", "Heure", "Stunde", "Час", "ساعة","घंटा", "ชั่วโมง", "Giờ", "Saat", "Ώρα", "Timme", "Uur",  "Tunti","Oră", "Година", "Oras", "Saa"
-];
-
-const textContainer = document.getElementById("nuit");
-let index = 0;
-
-function showTranslation() {
-  index = (index + 1) % translations.length;
-  textContainer.textContent = translations[index];
-
-  // 텍스트 초기 위치 설정 및 페이드인
-  gsap.fromTo(
-    textContainer,
-    { y: 100, opacity: 0 },
-    { y: 0, opacity: 1, duration: 0.5 }
-  );
-}
-
-// 텍스트 전환
-setInterval(showTranslation, 500);
+ScrollTrigger.create({
+	trigger: ".sc-project .group-side", 
+	start: "top bottom", 
+	end: "bottom bottom", 
+	markers:false,
+	onEnter: function() {
+    document.querySelector('#header .group-top').classList.add('dark');
+    document.querySelector('.nav-list').classList.add('dark');
+	},
+	onLeaveBack: function() {
+    document.querySelector('#header .group-top').classList.remove('dark');
+    document.querySelector('.nav-list').classList.remove('dark');
+	}
+});
 
 const project = gsap.timeline({
   scrollTrigger: {
@@ -52,16 +43,13 @@ const project = gsap.timeline({
     start: "top center",
     end: "bottom bottom",
     scrub: 1,
-    markers: true,
+    markers: false,
   },
 });
 
 gsap.set('.sc-project .group-project .project-item:nth-child(n+2)',{yPercent:100})
 gsap.utils.toArray(".sc-project .group-project .project-item").forEach((item,index,array) => {
-  project
-  .to(
-    item,{yPercent:0,}
-  );
+  project.to(item,{yPercent:0,});
   if (index > 0) {
     project.to(array[index - 1], { '--after': '1' },'-=.5');
   }
@@ -71,7 +59,7 @@ gsap.utils.toArray(".sc-project .group-project .project-item").forEach((item,ind
 const projectSide = gsap.timeline({
   scrollTrigger: {
     trigger: ".sc-project .group-side",
-    start: "top center",
+    start: "top bottom",
     end: "bottom bottom",
     scrub: 1,
     markers: false,
@@ -96,7 +84,27 @@ function init() {
 
   ScrollTrigger.matchMedia({
     "(min-width: 700px)": function() {
-
+      const translations = [
+        "Hour", "시간", "時間", "小时", "Hora", "Heure", "Stunde", "Час", "ساعة","घंटा", "ชั่วโมง", "Giờ", "Saat", "Ώρα", "Timme", "Uur",  "Tunti","Oră", "Година", "Oras", "Saa"
+      ];
+      
+      const textContainer = document.getElementById("nuit");
+      let index = 0;
+      
+      function showTranslation() {
+        index = (index + 1) % translations.length;
+        textContainer.textContent = translations[index];
+      
+        // 텍스트 초기 위치 설정 및 페이드인
+        gsap.fromTo(
+          textContainer,
+          { y: 100, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.5 }
+        );
+      }
+      
+      // 텍스트 전환
+      setInterval(showTranslation, 500);
     },
     "(max-width: 767px)": function() {
 
