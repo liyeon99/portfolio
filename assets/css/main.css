@@ -168,14 +168,11 @@
 }
 
 .sc-project .group-project {
-  /* height: 700vh; */
-  /* margin-top: -100vh; */
+  height: 800vh;
 }
-
 .sc-project .group-project .project-item {
-  position: sticky;
   top: 0;
-  /* position: absolute; */
+  position: absolute;
   /* top: 0; */
   /* left: 0; */
   width: 100%;
@@ -184,53 +181,71 @@
   --color-project: #333;
   background-color: var(--color-project);
   padding: clamp(10px, 10vw, 20px);
+  --after:0;
+}
+
+.sc-project .group-project .project-item::after{
+  content: '';
+  position: absolute;
+  top: 0;right: 0;
+  left: 0;bottom: 0;
+  background: rgba(0, 0, 0, var(--opacity));
+  opacity: var(--after);
+  pointer-events: none;
+  z-index: 3;
 }
 
 .sc-project .group-project .project-item:nth-child(1) {
   z-index: 1;
+  --opacity:.7;
 }
+
 
 .sc-project .group-project .project-item:nth-child(2) {
   z-index: 2;
-  --color-project: #074799;
-  top: 85px;
-
+  --opacity:.5;
+  top: 98px;
 }
 
 .sc-project .group-project .project-item:nth-child(3) {
   z-index: 3;
-  --color-project: #009990;
-  top: 170px;
+  --opacity:.3;
+  top: 197px;
 }
 
 .sc-project .group-project .project-item:nth-child(4) {
   z-index: 4;
-  --color-project: #72BF78;
+  top: 298px;
 }
 
+.sc-project .group-project .project-item:nth-child(4) .links-box{
+  flex-direction: column;
+}
 .sc-project .group-project .project-area {
   display: flex;
   align-items: center;
   flex-direction: column;
   height: 100%;
   gap: 20px;
+  padding-top: 20px;
 }
 
 .sc-project .group-project .project-area .title {
   font-family: var(--font2);
   color: var(--color-white);
   /* font-size: clamp(18px, 5vw, 80px); */
-  font-size: 40px;
+  font-size: clamp(18px, 5vw, 40px);
   text-transform: uppercase;
   position: relative;
   z-index: 2;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
 }
 
 .sc-project .group-project .project-area .links-box {
   display: flex;
   gap: 10px;
   text-transform: uppercase;
-  display: none;
+  z-index: 2;
 }
 
 
@@ -238,6 +253,7 @@
   position: absolute;
   top: 0;
   width: 100%;
+  height: 100%;
 }
 
 .sc-project .links-box a {
@@ -245,10 +261,14 @@
   align-items: center;
   justify-content: center;
   border-radius: 50px;
-  font-size: 12px;
-  padding: 5px 10px;
+  font-size: clamp(12px,3vw, 16px);
+  font-weight: bold;
+  padding: 10px 20px;
   border: 1px solid #fff;
   transition: 0.3s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(230, 239, 239, .2);
+  backdrop-filter: blur(15px);
 }
 
 .sc-project .links-box a:hover {
@@ -257,15 +277,29 @@
   color: var(--color-main);
 }
 
+.sc-project .links-box a:hover::after {
+  filter: brightness(0) saturate(100%) invert(9%) sepia(23%) saturate(1188%) hue-rotate(120deg) brightness(97%) contrast(104%);
+}
+
+.sc-project .link-go::after {
+  content: '';
+  width: 20px;
+  height: 100%;
+  background-image: url(../images/arrow.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
 .sc-project .tag-box {
   margin: 10px 0 20px;
-  font-size: 18px;
+  font-size: clamp(13px, 4vw, 18px);
+
   text-align: center;
   position: relative;
   z-index: 2;
   color: var(--color-white);
   max-width: 500px;
-  font-size: 18px;
 }
 
 .sc-project .group-side {
@@ -346,25 +380,21 @@ color: #000;}
     min-height: 1080px;
   }
 
-  .sc-project .links-box a {
-    font-size: 16px;
-    padding: 10px 20px;
+  .sc-project .group-project .project-item:nth-child(2) {
+    top: 120px;
+  }
+  
+  .sc-project .group-project .project-item:nth-child(3) {
+    top: 235px;
+  }
+  
+  .sc-project .group-project .project-item:nth-child(4) {
+    top: 354px;
   }
 
-  .sc-project .links-box a:hover::after {
-    filter: brightness(0) saturate(100%) invert(9%) sepia(23%) saturate(1188%) hue-rotate(120deg) brightness(97%) contrast(104%);
+  .sc-project .group-project .project-item:nth-child(4) .links-box{
+    flex-direction: row;
   }
-
-  .sc-project .link-go::after {
-    content: '';
-    width: 20px;
-    height: 100%;
-    background-image: url(../images/arrow.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-  }
-
   .sc-project .group-side {
     width: 80%;
   }

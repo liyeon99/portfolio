@@ -4,19 +4,23 @@ gsap.defaults({
 });
 
 
+
+const loading = document.querySelector(".loading");
+  
+
 //딜레이
 setTimeout(() => {
   gsap.to("#num", {
-    duration: 3, // 애니메이션 지속 시간 (초 단위)
+    duration: 3, 
     innerText: 340, // 목표 숫자
     snap: { innerText: 1 }, // 숫자가 정수로 바뀌도록 설정
     onUpdate: function () {
-      document.getElementById("num").innerText = Math.floor(
-        this.targets()[0].innerText
-      );
+      document.getElementById("num").innerText = Math.floor(this.targets()[0].innerText);
     },
   });
-}, 3000);
+  loading.style.display = 'none';
+}, 3300);
+// setTimeout(() => {gsap.to(loading,{ yPercent: -100},);}, 3000);
 
 
 
@@ -42,6 +46,26 @@ function showTranslation() {
 // 텍스트 전환
 setInterval(showTranslation, 500);
 
+const project = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".sc-project .group-project",
+    start: "top center",
+    end: "bottom bottom",
+    scrub: 1,
+    markers: true,
+  },
+});
+
+gsap.set('.sc-project .group-project .project-item:nth-child(n+2)',{yPercent:100})
+gsap.utils.toArray(".sc-project .group-project .project-item").forEach((item,index,array) => {
+  project
+  .to(
+    item,{yPercent:0,}
+  );
+  if (index > 0) {
+    project.to(array[index - 1], { '--after': '1' },'-=.5');
+  }
+});
 
 // 사이드 프로젝트
 const projectSide = gsap.timeline({
@@ -65,3 +89,20 @@ gsap.utils.toArray(".sc-project .group-side .side-item").forEach((item) => {
     }
   );
 });
+
+function init() {
+  
+  gsap.registerPlugin(ScrollTrigger);
+
+  ScrollTrigger.matchMedia({
+    "(min-width: 700px)": function() {
+
+    },
+    "(max-width: 767px)": function() {
+
+    }
+  });
+  window.addEventListener("resize", ScrollTrigger.update);
+}
+
+init();
