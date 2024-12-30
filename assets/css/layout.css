@@ -75,7 +75,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
   gap: 3vw;
   max-width: 1600px;
@@ -96,6 +96,7 @@
 #footer .desc{
   color: #808080;
   font-size: clamp(14px, 3vw, 20px);
+  text-align: center;
 }
 #footer address {
   font-weight: 900;
@@ -106,6 +107,9 @@
   font-size: 12px;
   color: rgba(128, 128, 128, 0.733);
   text-transform: uppercase;
+}
+.only-pc{
+  display: none;
 }
 
 @keyframes flicker {
@@ -132,5 +136,8 @@
   }
   #footer .group-footer {
     width: 80%;
+  }
+  .only-pc{
+    display: block;
   }
 }

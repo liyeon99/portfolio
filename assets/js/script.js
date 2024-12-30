@@ -40,20 +40,24 @@ ScrollTrigger.create({
 const project = gsap.timeline({
   scrollTrigger: {
     trigger: ".sc-project .group-project",
-    start: "top center",
+    start: "top top",
     end: "bottom bottom",
-    scrub: 1,
+    scrub: 0,
     markers: false,
   },
 });
 
 gsap.set('.sc-project .group-project .project-item:nth-child(n+2)',{yPercent:100})
-gsap.utils.toArray(".sc-project .group-project .project-item").forEach((item,index,array) => {
-  project.to(item,{yPercent:0,});
-  if (index > 0) {
-    project.to(array[index - 1], { '--after': '1' },'-=.5');
-  }
-});
+
+
+
+project
+.to('.sc-project .group-project .project-item:nth-child(n+2)',
+  {yPercent:0,
+  stagger:{
+    amount:0.8,
+  },},'-=0.3')
+.to('.sc-project .group-project .project-item',{ '--after': '1' },'<+=0.2')
 
 // 사이드 프로젝트
 const projectSide = gsap.timeline({
@@ -79,9 +83,7 @@ gsap.utils.toArray(".sc-project .group-side .side-item").forEach((item) => {
 });
 
 function init() {
-  
   gsap.registerPlugin(ScrollTrigger);
-
   ScrollTrigger.matchMedia({
     "(min-width: 700px)": function() {
       const translations = [
