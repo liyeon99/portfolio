@@ -48,10 +48,17 @@
   overflow: hidden;
   display: flex;
   pointer-events: none;
+  position: relative;
+}
+.marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;left: 0;right: 0;bottom: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 10% rgba(0,0,0,0) 90%, rgba(0,0,0,1) 100%);
 }
 
 .marquee-list {
-  width: 100%;
+  width: max-content;
   display: flex;
   gap: 5px;
   align-items: center;

@@ -57,7 +57,7 @@ project
   stagger:{
     amount:0.8,
   },},'-=0.3')
-.to('.sc-project .group-project .project-item',{ '--after': '1' },'<+=0.2')
+.to('.sc-project .group-project .project-item',{ '--after': '1',stagger:{amount:0.8} },'<+=0.3')
 
 // 사이드 프로젝트
 const projectSide = gsap.timeline({
